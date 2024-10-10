@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    
+    <style>
+        
+        table {
+            width: 280px;
+            height: 550px;
+            margin: auto;
+            
+        }
+        .email {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-color: lightgray;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);
+        }
+        .text {
+            width: 250px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);
+        }
+        select {
+            width: 100px;
+            height: 32px;
+            font-size: 15px;
+            border: 1;
+            border-color: lightgray;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+        }
+        .btn {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(164, 199, 255);
+        }
+        .btn:active {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(61, 135, 255);
+        }
+    </style>
+</head>
+<body>
+<form id="form" action="#">
+    <table>
+            <tr>
+                <td><h2>회원가입</h2></td>
+            </tr>
+            <tr><td>아이디</td></tr>
+            <tr><td><input name="id" type="text" class="text" placeholder="아이디" autocomplete="off" required></td></tr>
+            <tr><td>비밀번호</td></tr>
+            <tr><td><input type="password" name="pw1" class="text" placeholder="비밀번호" required></td></tr>
+            <tr><td>비밀번호 확인</td></tr>
+            <tr><td><input type="password" name="pw2" class="text" placeholder="비밀번호 확인" required></td></tr>
+            <tr><td>이름</td></tr>
+            <tr><td><input name="name" type="text" class="text" placeholder="이름" required></td></tr>
+            <tr><td>전화번호</td></tr>
+            <tr><td><input name="phone" class="text" placeholder="휴대전화 번호" autocomplete="off" required></td></tr>
+            <tr><td>이메일</td></tr>
+            <tr><td><input name="email" type="text" class="email" placeholder="이메일" required></td></tr>
+            <tr><td><input type="submit" value="가입하기" class="btn"></td></tr>
+    </table>
+</form>
+<script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(event){
+    event.preventDefault()
+
+    let userId = event.target.id.value
+    let userName = event.target.name.value
+    let userEmail = event.target.email.value
+
+    alert(`${userId}님 환영합니다.
+    이름 : ${userName}
+    이메일 : ${userEmail}`)
+
+    });
+</script>
+</body>
+</html>
