@@ -10,7 +10,7 @@
             margin:0;
             color:#6a6f8c;
             background:#c8c8c8;
-            font:600 16px/18px 'Open Sans',sans-serif;
+            font:600 16px/14px 'Open Sans',sans-serif;
         }
         *,:after,:before{box-sizing:border-box}
             .clearfix:after,.clearfix:before{content:'';display:table}
@@ -21,7 +21,7 @@
             width:100%;
             margin:auto;
             max-width:525px;
-            min-height:670px;
+            min-height:690px;
             position:relative;
             background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
             box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
@@ -146,12 +146,6 @@
         }
             .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
             transform:rotate(0);
-        }
-            .hr{
-            height:2px;
-            margin:60px 0 50px 0;
-            background:rgba(255,255,255,.2);
-        }
             .foot-lnk{
             text-align:center;
         }
@@ -176,8 +170,22 @@
                     <input id="pass" type="password" name="pw2" class="input" data-type="password" required>
                 </div>
                 <div class="group">
+                    <label for="pass" class="label">이름</label>
+                    <input input name="name" type="text" class="input" required>
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">휴대전화 번호</label>
+                    <input name="phone" type="text" class="input" required>
+                </div>
+                <div class="group">
                     <label for="pass" class="label">이메일 주소</label>
                     <input name="email" id="pass" type="text" class="input" required>
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">성별</label>
+                    <input type="radio" name="gender" value="male" checked>남성
+                    <input type="radio" name="gender" value="fmale">여성
+
                 </div>
                 <div class="group">
                     <input type="submit" class="button" value="Sign Up">
