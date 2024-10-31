@@ -26,4 +26,6 @@
 
 -- DELETE FROM employees WHERE name = '민혁';
 
+-- SELECT position, AVG(salary) AS average_salary FROM employees GROUP BY position;
+
 -- DELETE FROM employees;
