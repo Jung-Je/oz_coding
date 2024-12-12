@@ -3,14 +3,20 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Address
 from .serializers import AddressSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class AddressList(APIView):
+    authentication_classes = [TokenAuthentication] #추가
+    permission_classes = [IsAuthenticated] #추가
     def get(self, request):
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
         return Response(serializer.data)
 
 class AddressDetail(APIView):
+    authentication_classes = [TokenAuthentication] #추가
+    permission_classes = [IsAuthenticated] #추가
     def get_object(self, pk):
         try:
             return Address.objects.get(pk=pk)
@@ -22,7 +28,6 @@ class AddressDetail(APIView):
             return Response({'error': 'Address not found'}, status=status.HTTP_404_NOT_FOUND)
         serializer = AddressSerializer(address)
         return Response(serializer.data)
-        
 class CreateUserAddress(APIView):
     def post(self, request, user_id):
         serializer = AddressSerializer(data=request.data)
@@ -49,7 +54,6 @@ class UpdateAddress(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
 class DeleteAddress(APIView):
     def get_object(self, pk):
         try:
