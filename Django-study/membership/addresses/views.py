@@ -7,16 +7,16 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 class AddressList(APIView):
-    authentication_classes = [TokenAuthentication] #추가
-    permission_classes = [IsAuthenticated] #추가
+    # authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
         return Response(serializer.data)
 
 class AddressDetail(APIView):
-    authentication_classes = [TokenAuthentication] #추가
-    permission_classes = [IsAuthenticated] #추가
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get_object(self, pk):
         try:
             return Address.objects.get(pk=pk)
